@@ -1,8 +1,8 @@
 # README.md
 
-# AnimeFlow - Legal Anime Streaming Platform
+# AniMythRo - Legal Anime Streaming Platform
 
-AnimeFlow is a premium anime discovery and streaming platform that only uses legal, embeddable content from official sources like GundamInfo, Muse Asia, and other official YouTube channels.
+AniMythRo is a premium anime discovery and streaming platform that only uses legal, embeddable content from official sources like GundamInfo, Muse Asia, and other official YouTube channels.
 
 ## Features
 
@@ -34,5 +34,5 @@ AnimeFlow is a premium anime discovery and streaming platform that only uses leg
 
 ```bash
 git clone <repository>
-cd animeflow
+cd animythro
 npm install

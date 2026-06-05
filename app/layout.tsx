@@ -7,7 +7,7 @@ import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 
 export const metadata: Metadata = {
-  title: 'AnimeFlow',
+  title: 'AniMythRo',
   description: 'Stream and track your favorite anime series.',
 };
 

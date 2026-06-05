@@ -62,7 +62,7 @@ export default function ExternalLinkGuard() {
             <AlertTriangle className="h-6 w-6" />
           </div>
           <div>
-            <h2 id="external-link-title" className="text-xl font-bold">Leaving AnimeFlow</h2>
+            <h2 id="external-link-title" className="text-xl font-bold">Leaving AniMythRo</h2>
             <p className="text-sm text-gray-400">You are about to visit another website.</p>
           </div>
         </div>
