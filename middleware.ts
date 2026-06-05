@@ -2,6 +2,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const PROTECTED = ['/api/admin', '/api/admin-anime', '/api/pending', '/api/sync', '/api/cron'];
+// Old guessable path — return 404 so it appears to not exist
+const DEAD_PATHS = ['/admin'];
 const MAX_AGE = 60 * 60 * 8 * 1000; // 8 hours in ms
 
 function verifyAdminCookie(req: NextRequest): boolean {
@@ -21,6 +23,12 @@ function verifyAdminCookie(req: NextRequest): boolean {
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+
+  // Dead paths — return 404 to hide their existence
+  if (DEAD_PATHS.some((p) => pathname === p || pathname.startsWith(p + '/'))) {
+    return new NextResponse(null, { status: 404 });
+  }
+
   const isProtected = PROTECTED.some((p) => pathname.startsWith(p));
   // /api/admin-auth itself is the login endpoint — never block it
   if (!isProtected || pathname.startsWith('/api/admin-auth')) return NextResponse.next();
@@ -39,5 +47,9 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/api/admin/:path*', '/api/admin-anime/:path*', '/api/pending/:path*', '/api/sync/:path*', '/api/cron/:path*'],
+  matcher: [
+    '/admin/:path*', '/admin',
+    '/api/admin/:path*', '/api/admin-anime/:path*',
+    '/api/pending/:path*', '/api/sync/:path*', '/api/cron/:path*',
+  ],
 };
