@@ -8788,12 +8788,152 @@
     "type": "series"
   },
   {
-    "key": "121",
-    "id": "gintama-season-1",
-    "title": "Gintama Season 1",
+    "key": "122",
+    "id": "promotion-videos-of-simulcast",
+    "title": "📺Promotion Videos of Simulcast📺",
+    "description": "Official anime series from Muse Asia Official.",
+    "genres": [],
+    "playlistId": "PLwLSw1_eDZl0IjZvS5_v70R5wrfHSJueQ",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "123",
+    "id": "in-theaters-now",
+    "title": "🎥 In Theaters Now",
     "description": "Official anime series from Ani-One Asia Official.",
     "genres": [],
-    "playlistId": "PLxSscENEp7JjYz_Mr7sak82-ImkZfxLO1",
+    "playlistId": "PLxSscENEp7Jjbt-yW1dSaqwnfQ78R3SLd",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "124",
+    "id": "the-promised-neverland",
+    "title": "THE PROMISED NEVERLAND",
+    "description": "Official anime series from Ani-One Asia Official.",
+    "genres": [],
+    "playlistId": "PLxSscENEp7JiN2wFYMdZ1y23q6d0ol4bu",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "125",
+    "id": "pure-tokyo",
+    "title": "PURE TOKYO",
+    "description": "Official anime series from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PLwazKLaN7rLhA9HCmMU23298bpDJqeCod",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "126",
+    "id": "romeo-x-juliet",
+    "title": "Romeo x Juliet",
+    "description": "Official anime series from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PLwazKLaN7rLjteTYMZQklzi7hhMj9__TQ",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "127",
+    "id": "assassination-classroom",
+    "title": "Assassination Classroom",
+    "description": "Official anime series from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PLwazKLaN7rLiF_RbOh88RE1TI3oK6edit",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "128",
+    "id": "witchblade",
+    "title": "Witchblade",
+    "description": "Official anime series from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PLwazKLaN7rLgvjoMvrUjCRu-hihlgo4lE",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "129",
+    "id": "ragnarok-the-animation",
+    "title": "Ragnarok The Animation",
+    "description": "Official anime series from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PLwazKLaN7rLjzbkQqjAa7l9potcowILZ5",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "130",
+    "id": "dimension-w-production-diary",
+    "title": "Dimension W - Production Diary",
+    "description": "Official anime series from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PLwazKLaN7rLjJD858caLyN4WHMCnkvJQT",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "131",
+    "id": "one-piece-film-gold",
+    "title": "One Piece Film: Gold",
+    "description": "Official anime movie from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PLwazKLaN7rLg7jFCOPFHf-GscwXM1W1YE",
+    "trending": 45,
+    "type": "movie"
+  },
+  {
+    "key": "132",
+    "id": "dragon-ball-z-resurrection-f",
+    "title": "Dragon Ball Z: Resurrection 'F'",
+    "description": "Official anime series from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PLwazKLaN7rLjCynJjlheSyJJGGMopkwsX",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "133",
+    "id": "dragon-ball-z-battle-of-gods",
+    "title": "Dragon Ball Z: Battle of Gods",
+    "description": "Official anime series from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PLwazKLaN7rLhsm9ubMM2maaXfb_iAKVVl",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "134",
+    "id": "hellsing-ultimate",
+    "title": "Hellsing Ultimate",
+    "description": "Official anime series from Crunchyroll Dubs.",
+    "genres": [],
+    "playlistId": "PL78FD9A78F0247D0F",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "135",
+    "id": "lady-oscar-the-rose-of-versailles",
+    "title": "Lady Oscar: The Rose of Versailles",
+    "description": "Official anime series from Anime! on TMS Official.",
+    "genres": [],
+    "playlistId": "PLj2Ugc-vxcWFA8y3C8XxPW2-q_sLHZG2q",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "136",
+    "id": "lupin-the-3rd-part-2-1977",
+    "title": "LUPIN THE 3rd PART 2 1977",
+    "description": "Official anime series from Anime! on TMS Official.",
+    "genres": [],
+    "playlistId": "PLj2Ugc-vxcWEvomV4nRhXY9ESB3XRLFiw",
     "trending": 45,
     "type": "series"
   }
