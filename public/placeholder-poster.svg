@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0f23"/>
+      <stop offset="100%" stop-color="#1a1a3e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="450" fill="url(#bg)"/>
+  <rect x="0" y="0" width="300" height="4" fill="url(#accent)"/>
+  <rect x="0" y="446" width="300" height="4" fill="url(#accent)"/>
+  <!-- Torii gate centered -->
+  <rect x="128" y="170" width="44" height="6" rx="3" fill="url(#accent)" opacity="0.7"/>
+  <rect x="134" y="163" width="32" height="6" rx="3" fill="url(#accent)" opacity="0.5"/>
+  <rect x="134" y="176" width="6" height="40" rx="3" fill="url(#accent)" opacity="0.7"/>
+  <rect x="160" y="176" width="6" height="40" rx="3" fill="url(#accent)" opacity="0.7"/>
+  <text x="150" y="260" font-family="system-ui,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">No Poster</text>
+  <text x="150" y="278" font-family="system-ui,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Available</text>
+</svg>
