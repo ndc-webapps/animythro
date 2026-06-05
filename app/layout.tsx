@@ -5,6 +5,7 @@ import { AppProvider } from '@/components/providers/AppProvider';
 import ExternalLinkGuard from '@/components/providers/ExternalLinkGuard';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'AniMythRo',
@@ -24,6 +25,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ExternalLinkGuard />
+          <SpeedInsights />
         </AppProvider>
       </body>
     </html>
