@@ -58,6 +58,25 @@ export default function DmcaPage() {
           </p>
         </section>
 
+        <section className="glass-card p-5">
+          <h2 className="font-semibold text-base mb-2 text-white">VPN &amp; Region Restrictions</h2>
+          <p className="text-gray-400">
+            Some titles on AniMythRo are only licensed for specific regions (e.g. Asia, France, Spain).
+            If a video shows &ldquo;not available in your country,&rdquo; that restriction is enforced
+            by the rights holder — not by us.
+          </p>
+          <p className="mt-3 text-gray-400">
+            Some users choose to use a VPN to access region-restricted content. AniMythRo does not
+            provide, endorse, or facilitate VPN usage. If you choose to use a VPN, you do so
+            entirely at your own discretion and risk. Please ensure you understand the terms of
+            service of any platform you access and the laws applicable in your country.
+          </p>
+          <p className="mt-3 text-xs text-gray-600">
+            AniMythRo takes no responsibility for any consequences arising from the use of VPNs
+            or other tools to bypass geo-restrictions.
+          </p>
+        </section>
+
         <p className="text-xs text-gray-600">
           Note: because we only embed and do not host, removing a video at its source (YouTube)
           also removes it here automatically. The address above is for de-listing from our index.
