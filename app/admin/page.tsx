@@ -157,14 +157,30 @@ export default function AdminPage() {
   >([]);
   const [previewEmbedUrl, setPreviewEmbedUrl] = useState<string | null>(null);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const [loginError, setLoginError] = useState('');
+  const [loginLoading, setLoginLoading] = useState(false);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'Adminshibal0120.01') {
-      setAuthenticated(true);
-      fetchPending();
-      fetchLogs();
-    } else {
-      alert('Invalid password');
+    setLoginError('');
+    setLoginLoading(true);
+    try {
+      const res = await fetch('/api/admin-auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password }),
+      });
+      if (res.ok) {
+        setAuthenticated(true);
+        fetchPending();
+        fetchLogs();
+      } else {
+        setLoginError('Invalid password');
+      }
+    } catch {
+      setLoginError('Login failed. Try again.');
+    } finally {
+      setLoginLoading(false);
     }
   };
 
@@ -335,8 +351,15 @@ export default function AdminPage() {
                 autoComplete="current-password"
               />
             </div>
-            <button type="submit" className="btn-primary w-full justify-center py-3">
-              Login
+            {loginError && (
+              <p className="text-red-400 text-sm text-center">{loginError}</p>
+            )}
+            <button
+              type="submit"
+              disabled={loginLoading}
+              className="btn-primary w-full justify-center py-3 disabled:opacity-50"
+            >
+              {loginLoading ? 'Checking…' : 'Login'}
             </button>
           </form>
         </div>
