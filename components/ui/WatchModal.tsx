@@ -207,6 +207,9 @@ export default function WatchModal({
               >
                 <Globe className="w-3.5 h-3.5 flex-shrink-0" />
                 <span className="truncate max-w-[22rem]">{anime.regionNote}</span>
+                <span className="border-l border-white/10 pl-3 text-gray-600 hidden lg:inline">
+                  Region-locked? A VPN may help — at your own discretion.
+                </span>
               </span>
             )}
           </div>
