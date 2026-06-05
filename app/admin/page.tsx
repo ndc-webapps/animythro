@@ -159,7 +159,7 @@ export default function AdminPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'admin123') {
+    if (password === 'Adminshibal0120.01') {
       setAuthenticated(true);
       fetchPending();
       fetchLogs();
