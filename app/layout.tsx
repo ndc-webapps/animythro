@@ -7,6 +7,7 @@ import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'AniMythRo',
@@ -29,6 +30,11 @@ export default function RootLayout({
           <SpeedInsights />
           <Analytics />
         </AppProvider>
+        <Script
+          src="https://statspilot.vercel.app/script.js"
+          data-project-id="cmq5bfisi000104kzdsciuku6"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
