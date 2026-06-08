@@ -31,7 +31,7 @@ export default function RootLayout({
           <Analytics />
         </AppProvider>
         <Script
-          src="https://statspilot.vercel.app/script.js"
+          src="/static/insights.js"
           data-project-id="cmq5bfisi000104kzdsciuku6"
           strategy="afterInteractive"
         />
