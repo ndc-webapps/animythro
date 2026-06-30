@@ -11,27 +11,6 @@ interface PlaylistVideo {
   title: string;
 }
 
-let playlistDataCache: {
-  officialPlaylists: Record<string, PlaylistVideo[]>;
-  playlistSnapshots: Record<string, PlaylistVideo[]>;
-} | null = null;
-
-// Lazily imported so this ~2.4MB fallback dataset isn't bundled into every
-// edge route that pulls in lib/redis.ts — it's only needed when Redis isn't
-// configured.
-async function getPlaylistData() {
-  if (playlistDataCache) return playlistDataCache;
-  const [{ default: officialPlaylists }, { default: expandedPlaylists }] = await Promise.all([
-    import('./official-playlists.json'),
-    import('./expanded-playlists.json'),
-  ]);
-  playlistDataCache = {
-    officialPlaylists,
-    playlistSnapshots: { ...officialPlaylists, ...expandedPlaylists },
-  };
-  return playlistDataCache;
-}
-
 const CACHE_TTL_MS = 15 * 60 * 1000;
 let catalogCache: { expiresAt: number; series: AnimeSeries[] } | null = null;
 
@@ -172,25 +151,14 @@ async function buildTrailers(): Promise<AnimeSeries[]> {
 export async function getLiveCatalog(): Promise<AnimeSeries[]> {
   if (catalogCache && catalogCache.expiresAt > Date.now()) return catalogCache.series;
 
-  const { officialPlaylists, playlistSnapshots } = await getPlaylistData();
-
   const series = await Promise.all(SERIES_CONFIGS.map(async (config) => {
-    const fallback = playlistSnapshots[config.key] ?? [];
-    const shouldRefreshLive = config.key in officialPlaylists;
-    if (!shouldRefreshLive) return buildSeries(config, fallback);
-
     try {
       const liveVideos = await fetchPlaylistVideos(config.playlistId);
-      if (liveVideos.length > 0) {
-        const merged = Array.from(
-          new Map([...liveVideos, ...fallback].map((video) => [video.id, video])).values()
-        );
-        return buildSeries(config, merged);
-      }
+      return buildSeries(config, liveVideos);
     } catch (error) {
       console.error(`Live playlist refresh failed for ${config.title}:`, error);
+      return buildSeries(config, []);
     }
-    return buildSeries(config, fallback);
   }));
 
   let trailers: AnimeSeries[] = [];

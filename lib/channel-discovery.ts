@@ -159,16 +159,10 @@ export async function discoverFromChannels(
     (await redis.smembers(KEYS.seriesList)).map(String)
   );
 
-  // Also load playlist IDs from expanded-catalog to avoid duplicates with yt-dlp catalog
-  let expandedCatalogPlaylistIds = new Set<string>();
-  try {
-    const { default: expandedCatalog } = await import('./expanded-catalog.json', { assert: { type: 'json' } });
-    for (const entry of expandedCatalog as { playlistId?: string }[]) {
-      if (entry.playlistId) expandedCatalogPlaylistIds.add(entry.playlistId);
-    }
-  } catch {
-    // Not critical — proceed without it
-  }
+  // Playlist IDs already known to Redis are deduped above; the old expanded-catalog.json
+  // snapshot is no longer bundled into the app (see lib/live-catalog.ts), so it isn't
+  // consulted here either — not critical for discovery correctness.
+  const expandedCatalogPlaylistIds = new Set<string>();
 
   let newPlaylistsProcessed = 0;
   const channels = OFFICIAL_ANIME_CHANNELS.filter(
