@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { saveSeries } from '@/lib/redis';
 import { AnimeSeries } from '@/types';
 
+export const runtime = 'edge';
+
 function isValidYouTubeEmbed(url: string): boolean {
   try {
     const u = new URL(url);

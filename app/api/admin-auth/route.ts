@@ -1,6 +1,8 @@
 // app/api/admin-auth/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'edge';
+
 const COOKIE = 'admin_session';
 const MAX_AGE = 60 * 60 * 8; // 8 hours
 
