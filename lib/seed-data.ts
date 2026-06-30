@@ -1,15 +1,8 @@
 import { AnimeSeries, ApprovedSource, Episode } from '@/types';
-import officialPlaylists from './official-playlists.json';
-import expandedPlaylists from './expanded-playlists.json';
 import { MUSE_ASIA_CHANNEL_ID, SERIES_CONFIGS } from './catalog-config';
 
-const playlistSnapshots = {
-  ...officialPlaylists,
-  ...expandedPlaylists,
-} as Record<string, { id: string; title: string }[]>;
-
 function buildFallbackSeries(config: (typeof SERIES_CONFIGS)[number]): AnimeSeries {
-  const videos = playlistSnapshots[config.key] ?? [];
+  const videos: { id: string; title: string }[] = [];
   const episodesByNumber = new Map<number, Episode>();
 
   videos.forEach((video, index) => {
@@ -56,7 +49,8 @@ function buildFallbackSeries(config: (typeof SERIES_CONFIGS)[number]): AnimeSeri
   };
 }
 
-// Last-known official playlist snapshot. Public API responses refresh from YouTube at runtime.
+// Emergency fallback only (Redis unreachable AND live YouTube fetch unavailable).
+// Episode lists are empty here; getLiveCatalog() is the real no-Redis fallback.
 export const SEED_SERIES: AnimeSeries[] = SERIES_CONFIGS.map(buildFallbackSeries);
 
 export const APPROVED_SOURCES: ApprovedSource[] = [

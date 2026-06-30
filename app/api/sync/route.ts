@@ -12,6 +12,8 @@ import { NextResponse } from 'next/server';
 import { discoverFromChannels } from '@/lib/channel-discovery';
 import { syncAllSeries } from '@/lib/sync-engine';
 
+export const runtime = 'edge';
+
 export async function POST(req: Request) {
   const apiKey = process.env.YOUTUBE_API_KEY;
   if (!apiKey) {

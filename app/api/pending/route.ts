@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getPendingEpisodes, getSeries, saveSeries, removePendingEpisode } from '@/lib/redis';
 import { Episode } from '@/types';
 
+export const runtime = 'edge';
+
 export async function GET() {
   const pending = await getPendingEpisodes();
   return NextResponse.json(pending);

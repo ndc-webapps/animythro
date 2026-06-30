@@ -1,5 +1,3 @@
-import expandedCatalog from './expanded-catalog.json';
-
 export const MUSE_ASIA_CHANNEL_ID = 'UCGbshtvS9t-8CW11W7TooQg';
 
 export interface SeriesConfig {
@@ -99,10 +97,7 @@ const FEATURED_SERIES_CONFIGS: SeriesConfig[] = [
   },
 ];
 
-export const SERIES_CONFIGS: SeriesConfig[] = [
-  ...FEATURED_SERIES_CONFIGS,
-  ...(expandedCatalog as SeriesConfig[]),
-];
+export const SERIES_CONFIGS: SeriesConfig[] = FEATURED_SERIES_CONFIGS;
 
 export const TRAILER_CONFIGS: TrailerConfig[] = [
   {

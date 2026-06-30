@@ -1,6 +1,4 @@
 import { AnimeSeries, Episode } from '@/types';
-import officialPlaylists from './official-playlists.json';
-import expandedPlaylists from './expanded-playlists.json';
 import {
   MUSE_ASIA_CHANNEL_ID,
   SERIES_CONFIGS,
@@ -12,11 +10,6 @@ interface PlaylistVideo {
   id: string;
   title: string;
 }
-
-const playlistSnapshots: Record<string, PlaylistVideo[]> = {
-  ...officialPlaylists,
-  ...expandedPlaylists,
-};
 
 const CACHE_TTL_MS = 15 * 60 * 1000;
 let catalogCache: { expiresAt: number; series: AnimeSeries[] } | null = null;
@@ -159,22 +152,13 @@ export async function getLiveCatalog(): Promise<AnimeSeries[]> {
   if (catalogCache && catalogCache.expiresAt > Date.now()) return catalogCache.series;
 
   const series = await Promise.all(SERIES_CONFIGS.map(async (config) => {
-    const fallback = playlistSnapshots[config.key] ?? [];
-    const shouldRefreshLive = config.key in officialPlaylists;
-    if (!shouldRefreshLive) return buildSeries(config, fallback);
-
     try {
       const liveVideos = await fetchPlaylistVideos(config.playlistId);
-      if (liveVideos.length > 0) {
-        const merged = Array.from(
-          new Map([...liveVideos, ...fallback].map((video) => [video.id, video])).values()
-        );
-        return buildSeries(config, merged);
-      }
+      return buildSeries(config, liveVideos);
     } catch (error) {
       console.error(`Live playlist refresh failed for ${config.title}:`, error);
+      return buildSeries(config, []);
     }
-    return buildSeries(config, fallback);
   }));
 
   let trailers: AnimeSeries[] = [];
