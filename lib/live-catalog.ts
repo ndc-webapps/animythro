@@ -1,6 +1,4 @@
 import { AnimeSeries, Episode } from '@/types';
-import officialPlaylists from './official-playlists.json';
-import expandedPlaylists from './expanded-playlists.json';
 import {
   MUSE_ASIA_CHANNEL_ID,
   SERIES_CONFIGS,
@@ -13,10 +11,26 @@ interface PlaylistVideo {
   title: string;
 }
 
-const playlistSnapshots: Record<string, PlaylistVideo[]> = {
-  ...officialPlaylists,
-  ...expandedPlaylists,
-};
+let playlistDataCache: {
+  officialPlaylists: Record<string, PlaylistVideo[]>;
+  playlistSnapshots: Record<string, PlaylistVideo[]>;
+} | null = null;
+
+// Lazily imported so this ~2.4MB fallback dataset isn't bundled into every
+// edge route that pulls in lib/redis.ts — it's only needed when Redis isn't
+// configured.
+async function getPlaylistData() {
+  if (playlistDataCache) return playlistDataCache;
+  const [{ default: officialPlaylists }, { default: expandedPlaylists }] = await Promise.all([
+    import('./official-playlists.json'),
+    import('./expanded-playlists.json'),
+  ]);
+  playlistDataCache = {
+    officialPlaylists,
+    playlistSnapshots: { ...officialPlaylists, ...expandedPlaylists },
+  };
+  return playlistDataCache;
+}
 
 const CACHE_TTL_MS = 15 * 60 * 1000;
 let catalogCache: { expiresAt: number; series: AnimeSeries[] } | null = null;
@@ -157,6 +171,8 @@ async function buildTrailers(): Promise<AnimeSeries[]> {
 
 export async function getLiveCatalog(): Promise<AnimeSeries[]> {
   if (catalogCache && catalogCache.expiresAt > Date.now()) return catalogCache.series;
+
+  const { officialPlaylists, playlistSnapshots } = await getPlaylistData();
 
   const series = await Promise.all(SERIES_CONFIGS.map(async (config) => {
     const fallback = playlistSnapshots[config.key] ?? [];
