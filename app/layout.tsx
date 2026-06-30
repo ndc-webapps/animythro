@@ -12,6 +12,9 @@ import Script from 'next/script';
 export const metadata: Metadata = {
   title: 'AniMythRo',
   description: 'Stream and track your favorite anime series.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
