@@ -5,11 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:apk-web": "node scripts/build-apk-web.mjs",
+    "build:apk": "npm run build:apk-web && npx cap sync android && cd android && gradlew.bat assembleDebug",
     "start": "next start",
     "lint": "next lint",
     "catalog:refresh": "node scripts/generate-expanded-catalog.mjs"
   },
   "dependencies": {
+    "@capacitor/android": "^8.4.1",
+    "@capacitor/core": "^8.4.1",
     "@upstash/redis": "^1.28.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
@@ -20,6 +24,7 @@
     "tailwindcss": "^3.3.6"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.4.1",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",

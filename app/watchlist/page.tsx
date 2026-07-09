@@ -1,7 +1,7 @@
 // app/watchlist/page.tsx
 'use client';
 
-import { useEffect, useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import { AnimeSeries } from '@/types';
 import AnimeCard from '@/components/ui/AnimeCard';
 import { useApp } from '@/components/providers/AppProvider';
@@ -23,22 +23,13 @@ function SkeletonGrid() {
 }
 
 export default function WatchlistPage() {
-  const { watchlist, continueWatching } = useApp();
-  const [allSeries, setAllSeries] = useState<AnimeSeries[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch('/api/anime')
-      .then(async (res) => {
-        const data = await res.json();
-        if (!res.ok) throw new Error(data?.error || 'Failed to fetch');
-        if (!Array.isArray(data)) throw new Error('Unexpected response');
-        setAllSeries(data);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, []);
+  const {
+    catalog: allSeries,
+    catalogLoading: loading,
+    catalogError: error,
+    watchlist,
+    continueWatching,
+  } = useApp();
 
   const saved = useMemo(
     () => allSeries.filter((s) => watchlist.includes(s.id)),

@@ -4,10 +4,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
-import { Search, Settings, Menu, X, Play } from 'lucide-react';
+import { Search, Settings, Menu, X, Play, RefreshCw, Shield } from 'lucide-react';
 import { useState, useRef, useEffect, useMemo, SVGProps } from 'react';
 import { useApp } from '../providers/AppProvider';
 import { AnimeSeries } from '@/types';
+import { openVpnSettings } from '@/lib/vpn-settings';
 
 /* ─── Custom icons ──────────────────────────────────────────────────── */
 
@@ -109,28 +110,28 @@ function scoreAnime(anime: AnimeSeries, rawQuery: string) {
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { searchQuery, setSearchQuery, watchlist } = useApp();
+  const {
+    catalog,
+    catalogSync,
+    refreshCatalog,
+    searchQuery,
+    setSearchQuery,
+    watchlist,
+  } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [catalog, setCatalog] = useState<AnimeSeries[]>([]);
   const [debouncedQuery, setDebouncedQuery] = useState('');
   const [suggestionsOpen, setSuggestionsOpen] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1); // -1 = none highlighted
   const searchRef = useRef<HTMLInputElement>(null);
   const navRef = useRef<HTMLElement>(null);
+  const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
 
   const navItems = [
     { href: '/', label: 'Home', icon: ToriiGateIcon },
     { href: '/browse', label: 'Browse', icon: KunaiIcon },
     { href: '/watchlist', label: 'Watchlist', icon: SharinganIcon },
   ];
-
-  useEffect(() => {
-    fetch('/api/anime')
-      .then((r) => r.ok ? r.json() : [])
-      .then((d) => setCatalog(Array.isArray(d) ? d : []))
-      .catch(() => setCatalog([]));
-  }, []);
 
   useEffect(() => {
     const t = window.setTimeout(() => setDebouncedQuery(searchQuery.trim()), 180);
@@ -435,17 +436,38 @@ export default function Navbar() {
           </div>
 
           {/* Admin — far right desktop */}
-          <Link
-            href="/admin"
-            className={`hidden md:flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-xl border transition-all duration-200 ${
-              pathname === '/admin'
-                ? 'bg-purple-500/20 border-purple-500/40 text-purple-400'
-                : 'border-white/10 text-gray-500 hover:text-white hover:border-white/20 hover:bg-white/5'
-            }`}
+          <button
+            type="button"
+            onClick={() => void refreshCatalog(true)}
+            disabled={catalogSync.status === 'syncing'}
+            title={catalogSync.message ?? 'Sync catalog'}
+            className="hidden md:flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 text-gray-500 hover:text-white hover:border-white/20 hover:bg-white/5 disabled:opacity-60 transition-all duration-200"
           >
-            <Settings className="w-3.5 h-3.5" />
-            Admin
-          </Link>
+            <RefreshCw className={`w-3.5 h-3.5 ${catalogSync.status === 'syncing' ? 'animate-spin' : ''}`} />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => void openVpnSettings()}
+            title="Open VPN settings"
+            className="hidden md:flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 text-gray-500 hover:text-white hover:border-white/20 hover:bg-white/5 transition-all duration-200"
+          >
+            <Shield className="w-3.5 h-3.5" />
+          </button>
+
+          {!isStaticExport && (
+            <Link
+              href="/sys-ctrl"
+              className={`hidden md:flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-xl border transition-all duration-200 ${
+                pathname === '/sys-ctrl'
+                  ? 'bg-purple-500/20 border-purple-500/40 text-purple-400'
+                  : 'border-white/10 text-gray-500 hover:text-white hover:border-white/20 hover:bg-white/5'
+              }`}
+            >
+              <Settings className="w-3.5 h-3.5" />
+              Admin
+            </Link>
+          )}
 
           {/* Mobile icons */}
           <div className="flex md:hidden items-center gap-1">
@@ -513,16 +535,41 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <Link
-                href="/admin"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium ${
-                  pathname === '/admin' ? 'bg-purple-500/20 text-purple-300' : 'text-gray-300 hover:bg-white/5'
-                }`}
+              {!isStaticExport && (
+                <Link
+                  href="/sys-ctrl"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium ${
+                    pathname === '/sys-ctrl' ? 'bg-purple-500/20 text-purple-300' : 'text-gray-300 hover:bg-white/5'
+                  }`}
+                >
+                  <Settings className="w-5 h-5" />
+                  Admin
+                </Link>
+              )}
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  void refreshCatalog(true);
+                }}
+                disabled={catalogSync.status === 'syncing'}
+                className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5 disabled:opacity-60"
               >
-                <Settings className="w-5 h-5" />
-                Admin
-              </Link>
+                <RefreshCw className={`w-5 h-5 ${catalogSync.status === 'syncing' ? 'animate-spin' : ''}`} />
+                Sync Catalog
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  void openVpnSettings();
+                }}
+                className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium text-gray-300 hover:bg-white/5"
+              >
+                <Shield className="w-5 h-5 text-cyan-400" />
+                VPN Settings
+              </button>
             </div>
           </div>
         )}

@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   },
 };
 
+const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
+
 export default function RootLayout({
   children,
 }: {
@@ -30,14 +32,16 @@ export default function RootLayout({
           {children}
           <Footer />
           <ExternalLinkGuard />
-          <SpeedInsights />
-          <Analytics />
+          {!isStaticExport && <SpeedInsights />}
+          {!isStaticExport && <Analytics />}
         </AppProvider>
-        <Script
-          src="/static/insights.js"
-          data-project-id="cmq5bfisi000104kzdsciuku6"
-          strategy="afterInteractive"
-        />
+        {!isStaticExport && (
+          <Script
+            src="/static/insights.js"
+            data-project-id="cmq5bfisi000104kzdsciuku6"
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );

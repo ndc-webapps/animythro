@@ -2,7 +2,7 @@
 'use client';
 
 import { useApp } from '../providers/AppProvider';
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { AnimeSeries } from '@/types';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,25 +10,12 @@ import { Play, Clock } from 'lucide-react';
 import ScrollRow from './ScrollRow';
 
 export default function ContinueWatching() {
-  const { continueWatching } = useApp();
-  const [seriesMap, setSeriesMap] = useState<Map<string, AnimeSeries>>(new Map());
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (continueWatching.length === 0) {
-      setLoading(false);
-      return;
-    }
-    fetch('/api/anime')
-      .then((res) => res.json())
-      .then((data: AnimeSeries[]) => {
-        const map = new Map<string, AnimeSeries>();
-        data.forEach((s) => map.set(s.id, s));
-        setSeriesMap(map);
-      })
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, [continueWatching.length]);
+  const { catalog, catalogLoading: loading, continueWatching } = useApp();
+  const seriesMap = useMemo(() => {
+    const map = new Map<string, AnimeSeries>();
+    catalog.forEach((series) => map.set(series.id, series));
+    return map;
+  }, [catalog]);
 
   const active = continueWatching
     .filter((item) => !item.completed)
