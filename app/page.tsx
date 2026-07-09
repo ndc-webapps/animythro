@@ -1,7 +1,6 @@
 // app/page.tsx
 'use client';
 
-import { useEffect, useState } from 'react';
 import HeroCarousel from '@/components/ui/HeroCarousel';
 import AnimeCard from '@/components/ui/AnimeCard';
 import ContinueWatching from '@/components/ui/ContinueWatching';
@@ -52,22 +51,12 @@ function SectionHeader({
 }
 
 export default function HomePage() {
-  const [allSeries, setAllSeries] = useState<AnimeSeries[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const { watchHistory } = useApp();
-
-  useEffect(() => {
-    fetch('/api/anime')
-      .then(async (res) => {
-        const data = await res.json();
-        if (!res.ok) throw new Error(data?.error || 'Failed to fetch anime');
-        if (!Array.isArray(data)) throw new Error('Unexpected response');
-        setAllSeries(data);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, []);
+  const {
+    catalog: allSeries,
+    catalogLoading: loading,
+    catalogError: error,
+    watchHistory,
+  } = useApp();
 
   if (error) {
     return (

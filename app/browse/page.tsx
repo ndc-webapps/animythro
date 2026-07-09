@@ -33,10 +33,15 @@ function SkeletonGrid() {
 }
 
 function BrowseContent() {
-  const [allSeries, setAllSeries] = useState<AnimeSeries[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const { searchQuery, setSearchQuery, selectedGenres, toggleGenre } = useApp();
+  const {
+    catalog: allSeries,
+    catalogLoading: loading,
+    catalogError: error,
+    searchQuery,
+    setSearchQuery,
+    selectedGenres,
+    toggleGenre,
+  } = useApp();
   const [showFilters, setShowFilters] = useState(false);
   const [typeFilter, setTypeFilter] = useState<'all' | 'series' | 'movie' | 'ova' | 'special'>('all');
   const [yearFilter, setYearFilter] = useState<string>('Any');
@@ -67,18 +72,6 @@ function BrowseContent() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params]);
-
-  useEffect(() => {
-    fetch('/api/anime')
-      .then(async (res) => {
-        const data = await res.json();
-        if (!res.ok) throw new Error(data?.error || 'Failed to fetch');
-        if (!Array.isArray(data)) throw new Error('Unexpected response');
-        setAllSeries(data);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, []);
 
   const filtered = useMemo(() => {
     // Exclude metadata-only trailer entries from the browse grid

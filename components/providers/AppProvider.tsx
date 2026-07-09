@@ -2,9 +2,24 @@
 'use client';
 
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
-import { WatchHistory } from '@/types';
+import { AnimeSeries, WatchHistory } from '@/types';
+import {
+  CATALOG_SYNC_STORAGE_KEY,
+  DEFAULT_CATALOG_SYNC_STATE,
+  loadCachedCatalog,
+  localDateKey,
+  shouldAutoSync,
+  syncCatalogFromGitHub,
+  type CatalogSyncState,
+} from '@/lib/catalog-sync';
+import { STATIC_CATALOG } from '@/lib/static-catalog';
 
 interface AppContextType {
+  catalog: AnimeSeries[];
+  catalogLoading: boolean;
+  catalogError: string | null;
+  catalogSync: CatalogSyncState;
+  refreshCatalog: (manual?: boolean) => Promise<void>;
   watchlist: string[];
   addToWatchlist: (id: string) => void;
   removeFromWatchlist: (id: string) => void;
@@ -38,6 +53,10 @@ function safeRead<T>(key: string, fallback: T): T {
 }
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
+  const [catalog, setCatalog] = useState<AnimeSeries[]>(STATIC_CATALOG);
+  const [catalogLoading, setCatalogLoading] = useState(true);
+  const [catalogError, setCatalogError] = useState<string | null>(null);
+  const [catalogSync, setCatalogSync] = useState<CatalogSyncState>(DEFAULT_CATALOG_SYNC_STATE);
   const [watchlist, setWatchlist] = useState<string[]>([]);
   const [continueWatching, setContinueWatching] = useState<WatchHistory[]>([]);
   const [watchHistory, setWatchHistory] = useState<WatchHistory[]>([]);
@@ -45,11 +64,90 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
   const [hydrated, setHydrated] = useState(false);
 
+  const refreshCatalog = useCallback(async (manual = false) => {
+    const startedAt = new Date().toISOString();
+    const today = localDateKey();
+
+    setCatalogError(null);
+    setCatalogSync((current) => ({
+      ...current,
+      status: 'syncing',
+      lastCheckedAt: startedAt,
+      lastAutoSyncDate: manual ? current.lastAutoSyncDate : today,
+      message: manual ? 'Manual sync running' : 'Daily sync running',
+    }));
+
+    try {
+      const result = await syncCatalogFromGitHub();
+      setCatalog(result.catalog);
+      setCatalogSync((current) => ({
+        ...current,
+        ...result.state,
+        lastAutoSyncDate: manual ? current.lastAutoSyncDate : today,
+      }));
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Catalog sync failed';
+      setCatalogSync((current) => ({
+        ...current,
+        status: 'error',
+        lastCheckedAt: new Date().toISOString(),
+        lastAutoSyncDate: manual ? current.lastAutoSyncDate : today,
+        message,
+      }));
+    }
+  }, []);
+
   useEffect(() => {
     setWatchlist(safeRead<string[]>(STORAGE_KEYS.watchlist, []));
     setContinueWatching(safeRead<WatchHistory[]>(STORAGE_KEYS.continue, []));
     setWatchHistory(safeRead<WatchHistory[]>(STORAGE_KEYS.history, []));
+    const storedSync = safeRead<CatalogSyncState>(
+      CATALOG_SYNC_STORAGE_KEY,
+      DEFAULT_CATALOG_SYNC_STATE
+    );
+    setCatalogSync(storedSync);
     setHydrated(true);
+
+    let active = true;
+    loadCachedCatalog()
+      .then((cached) => {
+        if (!active || !cached) return;
+        setCatalog(cached.catalog);
+        setCatalogSync((current) => ({ ...current, ...cached.state }));
+      })
+      .catch((error) => {
+        if (!active) return;
+        setCatalogSync((current) => ({
+          ...current,
+          message: error instanceof Error ? error.message : 'Catalog cache failed',
+        }));
+      })
+      .finally(() => {
+        if (!active) return;
+        setCatalogLoading(false);
+        if (shouldAutoSync(storedSync.lastAutoSyncDate)) {
+          void refreshCatalog(false);
+        }
+      });
+
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') {
+        setCatalogSync((current) => {
+          if (shouldAutoSync(current.lastAutoSyncDate)) {
+            void refreshCatalog(false);
+          }
+          return current;
+        });
+      }
+    };
+    document.addEventListener('visibilitychange', onVisible);
+    window.addEventListener('focus', onVisible);
+
+    return () => {
+      active = false;
+      document.removeEventListener('visibilitychange', onVisible);
+      window.removeEventListener('focus', onVisible);
+    };
   }, []);
 
   useEffect(() => {
@@ -66,6 +164,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     if (!hydrated) return;
     localStorage.setItem(STORAGE_KEYS.history, JSON.stringify(watchHistory));
   }, [watchHistory, hydrated]);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    localStorage.setItem(CATALOG_SYNC_STORAGE_KEY, JSON.stringify(catalogSync));
+  }, [catalogSync, hydrated]);
 
   const addToWatchlist = (id: string) => {
     setWatchlist((prev) => prev.includes(id) ? prev : [...prev, id]);
@@ -126,6 +229,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   return (
     <AppContext.Provider
       value={{
+        catalog,
+        catalogLoading,
+        catalogError,
+        catalogSync,
+        refreshCatalog,
         watchlist,
         addToWatchlist,
         removeFromWatchlist,
