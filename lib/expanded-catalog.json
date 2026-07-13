@@ -1886,16 +1886,6 @@
     "type": "series"
   },
   {
-    "key": "battle-game-in-5-seconds",
-    "id": "battle-game-in-5-seconds",
-    "title": "Battle Game in 5 Seconds",
-    "description": "Official anime episode collection from Muse Asia.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl0xUFXsv7l59J4AMJoSBD19",
-    "trending": 73,
-    "type": "series"
-  },
-  {
     "key": "the-aquatope-on-white-sand",
     "id": "the-aquatope-on-white-sand",
     "title": "The Aquatope on White Sand",
@@ -8836,6 +8826,36 @@
     "description": "Official anime series from KADOKAWAanime Official.",
     "genres": [],
     "playlistId": "PL3ongWuaWwZNhUhxDeyTz50_tlHUsVOsW",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "139",
+    "id": "after-war-gundam-x-w-subtitles",
+    "title": "After War Gundam X w/subtitles",
+    "description": "Official anime series from GUNDAM.INFO Official.",
+    "genres": [],
+    "playlistId": "PLJV1h9xQ7Hx_RmW7By87bGVXlUSSd3Kgo",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "140",
+    "id": "sonic-x",
+    "title": "Sonic X",
+    "description": "Official anime series from Anime! on TMS Official.",
+    "genres": [],
+    "playlistId": "PLj2Ugc-vxcWEsrn8tQSgP8dOLYtKAEMUp",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "141",
+    "id": "monster-rancher",
+    "title": "Monster Rancher",
+    "description": "Official anime series from Anime! on TMS Official.",
+    "genres": [],
+    "playlistId": "PLj2Ugc-vxcWHXx1YzMJJyaDQ3ihFHWiri",
     "trending": 45,
     "type": "series"
   }
