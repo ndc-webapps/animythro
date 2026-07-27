@@ -1156,16 +1156,6 @@
     "type": "series"
   },
   {
-    "key": "the-gene-of-ai",
-    "id": "the-gene-of-ai",
-    "title": "The Gene of AI",
-    "description": "Official anime episode collection from Muse Asia.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl2t0zGbV1BJfJObckS2BmgD",
-    "trending": 73,
-    "type": "series"
-  },
-  {
     "key": "dark-gathering",
     "id": "dark-gathering",
     "title": "Dark Gathering",
@@ -1882,16 +1872,6 @@
     "description": "Official anime episode collection from Muse Asia.",
     "genres": [],
     "playlistId": "PLwLSw1_eDZl0B5qey1i3WQhE7vhhtXINb",
-    "trending": 73,
-    "type": "series"
-  },
-  {
-    "key": "battle-game-in-5-seconds",
-    "id": "battle-game-in-5-seconds",
-    "title": "Battle Game in 5 Seconds",
-    "description": "Official anime episode collection from Muse Asia.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl0xUFXsv7l59J4AMJoSBD19",
     "trending": 73,
     "type": "series"
   },
@@ -7303,19 +7283,6 @@
     "regionNote": "Licensed via Anime! on TMS Official. Availability controlled by the rights holder."
   },
   {
-    "key": "monster-rancher-season-1",
-    "id": "monster-rancher-season-1",
-    "title": "Monster Rancher Season 1",
-    "description": "Official anime from Anime! on TMS Official.",
-    "genres": [],
-    "playlistId": "PLj2Ugc-vxcWFBzvU-nuA19309XyDM8GdF",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Anime! on TMS Official",
-    "channelId": "UCzGf0DdUJVrsbcWL3e_tK1Q",
-    "regionNote": "Licensed via Anime! on TMS Official. Availability controlled by the rights holder."
-  },
-  {
     "key": "go-nagai-s-the-devil-lady",
     "id": "go-nagai-s-the-devil-lady",
     "title": "Go Nagai's \"The Devil Lady\"",
@@ -8836,6 +8803,36 @@
     "description": "Official anime series from KADOKAWAanime Official.",
     "genres": [],
     "playlistId": "PL3ongWuaWwZNhUhxDeyTz50_tlHUsVOsW",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "139",
+    "id": "after-war-gundam-x-w-subtitles",
+    "title": "After War Gundam X w/subtitles",
+    "description": "Official anime series from GUNDAM.INFO Official.",
+    "genres": [],
+    "playlistId": "PLJV1h9xQ7Hx_RmW7By87bGVXlUSSd3Kgo",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "140",
+    "id": "sonic-x",
+    "title": "Sonic X",
+    "description": "Official anime series from Anime! on TMS Official.",
+    "genres": [],
+    "playlistId": "PLj2Ugc-vxcWEsrn8tQSgP8dOLYtKAEMUp",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "141",
+    "id": "monster-rancher",
+    "title": "Monster Rancher",
+    "description": "Official anime series from Anime! on TMS Official.",
+    "genres": [],
+    "playlistId": "PLj2Ugc-vxcWHXx1YzMJJyaDQ3ihFHWiri",
     "trending": 45,
     "type": "series"
   }
