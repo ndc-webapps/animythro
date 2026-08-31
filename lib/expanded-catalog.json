@@ -1016,16 +1016,6 @@
     "type": "series"
   },
   {
-    "key": "alderamin-on-the-sky",
-    "id": "alderamin-on-the-sky",
-    "title": "Alderamin On the Sky",
-    "description": "Official anime episode collection from Muse Asia.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl1tTjHxsEqxY9VXJH-heiAs",
-    "trending": 73,
-    "type": "series"
-  },
-  {
     "key": "momokuri",
     "id": "momokuri",
     "title": "Momokuri",
@@ -7123,19 +7113,6 @@
     "regionNote": "Licensed via Anime! on TMS Official. Availability controlled by the rights holder."
   },
   {
-    "key": "virtua-fighter",
-    "id": "virtua-fighter",
-    "title": "Virtua Fighter",
-    "description": "Official anime from Anime! on TMS Official.",
-    "genres": [],
-    "playlistId": "PLj2Ugc-vxcWHTy8PWCpHudY_iLD4PtljJ",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Anime! on TMS Official",
-    "channelId": "UCzGf0DdUJVrsbcWL3e_tK1Q",
-    "regionNote": "Licensed via Anime! on TMS Official. Availability controlled by the rights holder."
-  },
-  {
     "key": "cat-s-eye",
     "id": "cat-s-eye",
     "title": "CAT'S EYE",
@@ -7250,19 +7227,6 @@
     "description": "Official anime from Anime! on TMS Official.",
     "genres": [],
     "playlistId": "PLj2Ugc-vxcWGDWFMIlD5i-gz3u2s4tMa-",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Anime! on TMS Official",
-    "channelId": "UCzGf0DdUJVrsbcWL3e_tK1Q",
-    "regionNote": "Licensed via Anime! on TMS Official. Availability controlled by the rights holder."
-  },
-  {
-    "key": "virtua-fighter-kruifm",
-    "id": "virtua-fighter-kruifm",
-    "title": "Virtua Fighter",
-    "description": "Official anime from Anime! on TMS Official.",
-    "genres": [],
-    "playlistId": "PLj2Ugc-vxcWGhiXU49qGs839u1wkRUIFm",
     "trending": 72,
     "type": "series",
     "sourceName": "Anime! on TMS Official",
@@ -8777,16 +8741,6 @@
     "type": "series"
   },
   {
-    "key": "136",
-    "id": "lupin-the-3rd-part-2-1977",
-    "title": "LUPIN THE 3rd PART 2 1977",
-    "description": "Official anime series from Anime! on TMS Official.",
-    "genres": [],
-    "playlistId": "PLj2Ugc-vxcWEvomV4nRhXY9ESB3XRLFiw",
-    "trending": 45,
-    "type": "series"
-  },
-  {
     "key": "137",
     "id": "utusan-empat-musim-tarian-musim-semi-takarir-indonesia",
     "title": "Utusan Empat Musim: Tarian Musim Semi Takarir Indonesia",
@@ -8833,6 +8787,96 @@
     "description": "Official anime series from Anime! on TMS Official.",
     "genres": [],
     "playlistId": "PLj2Ugc-vxcWHXx1YzMJJyaDQ3ihFHWiri",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "143",
+    "id": "you-and-i-are-polar-opposites-season-2",
+    "title": "You and I are Polar Opposites Season 2",
+    "description": "Official anime series from Ani-One Asia Official.",
+    "genres": [],
+    "playlistId": "PLNNIeaeyNLNg",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "144",
+    "id": "saved-by-the-ice-cold-prince-s-embrace",
+    "title": "Saved By the Ice Cold Prince's Embrace",
+    "description": "Official anime series from Ani-One Asia Official.",
+    "genres": [],
+    "playlistId": "PLf6uu4mFo2tQ",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "145",
+    "id": "love-unseen-beneath-the-clear-night-sky",
+    "title": "Love Unseen Beneath the Clear Night Sky",
+    "description": "Official anime series from Ani-One Asia Official.",
+    "genres": [],
+    "playlistId": "PLTsUhR_H9p7U",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "146",
+    "id": "the-forsaken-saintess-and-her-foodie-road-trip-in-another-wo",
+    "title": "The Forsaken Saintess and Her Foodie Road Trip in Another World",
+    "description": "Official anime series from Ani-One Asia Official.",
+    "genres": [],
+    "playlistId": "PLKPqX4UJsUOI",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "147",
+    "id": "forsaken-saintess-and-her-foodie-road-trip-in-another-world",
+    "title": "⟪Forsaken Saintess and Her Foodie Road Trip in Another World⟫",
+    "description": "Official anime series from Ani-One India Official.",
+    "genres": [],
+    "playlistId": "PLBNZ5luwC0zo",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "148",
+    "id": "gundam-movie-memory",
+    "title": "GUNDAM MOVIE MEMORY",
+    "description": "Official anime movie from GUNDAM.INFO Official.",
+    "genres": [],
+    "playlistId": "PLRd-sQDIfoMs",
+    "trending": 45,
+    "type": "movie"
+  },
+  {
+    "key": "149",
+    "id": "en-sub-mobile-suit-gundam-seed-destiny-hd-remaster",
+    "title": "EN Sub Mobile Suit Gundam SEED DESTINY HD Remaster",
+    "description": "Official anime series from GUNDAM.INFO Official.",
+    "genres": [],
+    "playlistId": "PLH28wqlpBLfA",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "150",
+    "id": "en-sub-mobile-suit-gundam-seed-hd-remaster",
+    "title": "EN Sub Mobile Suit Gundam SEED HD Remaster",
+    "description": "Official anime series from GUNDAM.INFO Official.",
+    "genres": [],
+    "playlistId": "PLGCy0ANGbKCM",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "151",
+    "id": "kenichi",
+    "title": "KenIchi",
+    "description": "Official anime series from Anime! on TMS Official.",
+    "genres": [],
+    "playlistId": "PLj2Ugc-vxcWFY6YqMWEUqnwJ8F8Ppp_h-",
     "trending": 45,
     "type": "series"
   }
