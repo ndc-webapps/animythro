@@ -1016,16 +1016,6 @@
     "type": "series"
   },
   {
-    "key": "alderamin-on-the-sky",
-    "id": "alderamin-on-the-sky",
-    "title": "Alderamin On the Sky",
-    "description": "Official anime episode collection from Muse Asia.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl1tTjHxsEqxY9VXJH-heiAs",
-    "trending": 73,
-    "type": "series"
-  },
-  {
     "key": "momokuri",
     "id": "momokuri",
     "title": "Momokuri",
@@ -1386,16 +1376,6 @@
     "type": "series"
   },
   {
-    "key": "ahiru-no-sora",
-    "id": "ahiru-no-sora",
-    "title": "Ahiru no Sora",
-    "description": "Official anime episode collection from Muse Asia.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl0aMBGsjj5NwAkJb76zE59C",
-    "trending": 73,
-    "type": "series"
-  },
-  {
     "key": "mob-psycho-100-iii-s3",
     "id": "mob-psycho-100-iii-s3",
     "title": "Mob Psycho 100 III (S3)",
@@ -1532,16 +1512,6 @@
     "description": "Official anime episode collection from Muse Asia.",
     "genres": [],
     "playlistId": "PLwLSw1_eDZl0-bp4bZ7ER-VQ-973riDyN",
-    "trending": 73,
-    "type": "series"
-  },
-  {
-    "key": "a-certain-scientific-railgun",
-    "id": "a-certain-scientific-railgun",
-    "title": "A Certain Scientific Railgun",
-    "description": "Official anime episode collection from Muse Asia.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl2P4Wwj2piYnwauRoyEeqlZ",
     "trending": 73,
     "type": "series"
   },
@@ -2332,26 +2302,6 @@
     "description": "Official anime episode collection from the official rights-holder channel.",
     "genres": [],
     "playlistId": "PLwLSw1_eDZl295YtiWYiGSBinlDaH9yTH",
-    "trending": 72,
-    "type": "series"
-  },
-  {
-    "key": "kandagawa-jet-girls",
-    "id": "kandagawa-jet-girls",
-    "title": "Kandagawa Jet Girls",
-    "description": "Official anime episode collection from the official rights-holder channel.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl3kpZfsZ4e25RH25ZyYHk_j",
-    "trending": 72,
-    "type": "series"
-  },
-  {
-    "key": "outburst-dreamer-boys",
-    "id": "outburst-dreamer-boys",
-    "title": "OUTBURST DREAMER BOYS",
-    "description": "Official anime episode collection from the official rights-holder channel.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl1Nr5hw1RMKioVWWXGlPYwI",
     "trending": 72,
     "type": "series"
   },
@@ -5626,32 +5576,6 @@
     "regionNote": "Licensed via Asia (Ani-One / MediaLink). Availability is controlled by the rights holder."
   },
   {
-    "key": "white-album2",
-    "id": "white-album2",
-    "title": "WHITE ALBUM2",
-    "description": "Official anime collection from Ani-One Asia Official.",
-    "genres": [],
-    "playlistId": "PLxSscENEp7Ji9l-zVZPIfBAe6sw36m8Q7",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Ani-One Asia Official",
-    "channelId": "UC0wNSTMWIL3qaorLx0jie6A",
-    "regionNote": "Licensed via Asia (Ani-One / MediaLink). Availability is controlled by the rights holder."
-  },
-  {
-    "key": "takt-op-destiny",
-    "id": "takt-op-destiny",
-    "title": "takt op. Destiny",
-    "description": "Official anime collection from Ani-One Asia Official.",
-    "genres": [],
-    "playlistId": "PLxSscENEp7Jgp5-czzbc2NrWBg5g2qz7n",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Ani-One Asia Official",
-    "channelId": "UC0wNSTMWIL3qaorLx0jie6A",
-    "regionNote": "Licensed via Asia (Ani-One / MediaLink). Availability is controlled by the rights holder."
-  },
-  {
     "key": "the-faraway-paladin",
     "id": "the-faraway-paladin",
     "title": "The Faraway Paladin",
@@ -6081,19 +6005,6 @@
     "regionNote": "Licensed via Asia (Ani-One / MediaLink). Availability is controlled by the rights holder."
   },
   {
-    "key": "iwakakeru-sports-climbing-girls",
-    "id": "iwakakeru-sports-climbing-girls",
-    "title": "Iwakakeru! -Sports Climbing Girls-",
-    "description": "Official anime collection from Ani-One Asia Official.",
-    "genres": [],
-    "playlistId": "PLxSscENEp7JiVGfOfzmkABWP_-0P6biY_",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Ani-One Asia Official",
-    "channelId": "UC0wNSTMWIL3qaorLx0jie6A",
-    "regionNote": "Licensed via Asia (Ani-One / MediaLink). Availability is controlled by the rights holder."
-  },
-  {
     "key": "2",
     "id": "2",
     "title": "2",
@@ -6120,38 +6031,12 @@
     "regionNote": "Licensed via Asia (Ani-One / MediaLink). Availability is controlled by the rights holder."
   },
   {
-    "key": "yashahime-princess-half-demon",
-    "id": "yashahime-princess-half-demon",
-    "title": "Yashahime: Princess Half-Demon",
-    "description": "Official anime collection from Ani-One Asia Official.",
-    "genres": [],
-    "playlistId": "PLxSscENEp7Jjdk5R3iXkWIAGBMZ8Tugot",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Ani-One Asia Official",
-    "channelId": "UC0wNSTMWIL3qaorLx0jie6A",
-    "regionNote": "Licensed via Asia (Ani-One / MediaLink). Availability is controlled by the rights holder."
-  },
-  {
     "key": "i-m-standing-on-a-million-lives-ymfosw",
     "id": "i-m-standing-on-a-million-lives-ymfosw",
     "title": "I'm Standing on A Million Lives",
     "description": "Official anime collection from Ani-One Asia Official.",
     "genres": [],
     "playlistId": "PLxSscENEp7JjixIi-QPRM73VB13yMfOsW",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Ani-One Asia Official",
-    "channelId": "UC0wNSTMWIL3qaorLx0jie6A",
-    "regionNote": "Licensed via Asia (Ani-One / MediaLink). Availability is controlled by the rights holder."
-  },
-  {
-    "key": "higurashi-when-they-cry-gou",
-    "id": "higurashi-when-they-cry-gou",
-    "title": "Higurashi: When They Cry GOU",
-    "description": "Official anime collection from Ani-One Asia Official.",
-    "genres": [],
-    "playlistId": "PLxSscENEp7Jj1KDCcoLBqT6tpeSjzbFN9",
     "trending": 72,
     "type": "series",
     "sourceName": "Ani-One Asia Official",
@@ -7019,19 +6904,6 @@
     "regionNote": "Licensed via Anime! on TMS Official. Availability controlled by the rights holder."
   },
   {
-    "key": "tomorrow-s-joe-2",
-    "id": "tomorrow-s-joe-2",
-    "title": "Tomorrow's Joe 2",
-    "description": "Official anime from Anime! on TMS Official.",
-    "genres": [],
-    "playlistId": "PLj2Ugc-vxcWHJjFKPZwA0yfdD_9KKVv_W",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Anime! on TMS Official",
-    "channelId": "UCzGf0DdUJVrsbcWL3e_tK1Q",
-    "regionNote": "Licensed via Anime! on TMS Official. Availability controlled by the rights holder."
-  },
-  {
     "key": "new-tetsujin-28",
     "id": "new-tetsujin-28",
     "title": "New Tetsujin 28",
@@ -7116,19 +6988,6 @@
     "description": "Official anime from Anime! on TMS Official.",
     "genres": [],
     "playlistId": "PLj2Ugc-vxcWGuN89n4sW2RaNSf4V1q1vL",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Anime! on TMS Official",
-    "channelId": "UCzGf0DdUJVrsbcWL3e_tK1Q",
-    "regionNote": "Licensed via Anime! on TMS Official. Availability controlled by the rights holder."
-  },
-  {
-    "key": "virtua-fighter",
-    "id": "virtua-fighter",
-    "title": "Virtua Fighter",
-    "description": "Official anime from Anime! on TMS Official.",
-    "genres": [],
-    "playlistId": "PLj2Ugc-vxcWHTy8PWCpHudY_iLD4PtljJ",
     "trending": 72,
     "type": "series",
     "sourceName": "Anime! on TMS Official",
@@ -7250,19 +7109,6 @@
     "description": "Official anime from Anime! on TMS Official.",
     "genres": [],
     "playlistId": "PLj2Ugc-vxcWGDWFMIlD5i-gz3u2s4tMa-",
-    "trending": 72,
-    "type": "series",
-    "sourceName": "Anime! on TMS Official",
-    "channelId": "UCzGf0DdUJVrsbcWL3e_tK1Q",
-    "regionNote": "Licensed via Anime! on TMS Official. Availability controlled by the rights holder."
-  },
-  {
-    "key": "virtua-fighter-kruifm",
-    "id": "virtua-fighter-kruifm",
-    "title": "Virtua Fighter",
-    "description": "Official anime from Anime! on TMS Official.",
-    "genres": [],
-    "playlistId": "PLj2Ugc-vxcWGhiXU49qGs839u1wkRUIFm",
     "trending": 72,
     "type": "series",
     "sourceName": "Anime! on TMS Official",
@@ -8297,16 +8143,6 @@
     "type": "series"
   },
   {
-    "key": "71",
-    "id": "ganbare-doukichan-english-sub",
-    "title": "GANBARE DOUKICHAN English Sub",
-    "description": "Official anime series from Muse Asia Official.",
-    "genres": [],
-    "playlistId": "PLwLSw1_eDZl1etvMN_OKH4-hnOROmTPaX",
-    "trending": 45,
-    "type": "series"
-  },
-  {
     "key": "72",
     "id": "suicide-squad-isekai",
     "title": "Suicide Squad ISEKAI",
@@ -8777,16 +8613,6 @@
     "type": "series"
   },
   {
-    "key": "136",
-    "id": "lupin-the-3rd-part-2-1977",
-    "title": "LUPIN THE 3rd PART 2 1977",
-    "description": "Official anime series from Anime! on TMS Official.",
-    "genres": [],
-    "playlistId": "PLj2Ugc-vxcWEvomV4nRhXY9ESB3XRLFiw",
-    "trending": 45,
-    "type": "series"
-  },
-  {
     "key": "137",
     "id": "utusan-empat-musim-tarian-musim-semi-takarir-indonesia",
     "title": "Utusan Empat Musim: Tarian Musim Semi Takarir Indonesia",
@@ -8833,6 +8659,106 @@
     "description": "Official anime series from Anime! on TMS Official.",
     "genres": [],
     "playlistId": "PLj2Ugc-vxcWHXx1YzMJJyaDQ3ihFHWiri",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "142",
+    "id": "2026-oct-dandivine-english-sub",
+    "title": "2026 Oct DANDIVINE English Sub",
+    "description": "Official anime series from Muse Asia Official.",
+    "genres": [],
+    "playlistId": "PLIRs2h2eO4ys",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "143",
+    "id": "2026-oct-a-tale-of-the-secret-saint-english-sub",
+    "title": "2026 Oct A Tale of the Secret Saint English Sub",
+    "description": "Official anime series from Muse Asia Official.",
+    "genres": [],
+    "playlistId": "PLFsBVQsxttbw",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "144",
+    "id": "2026-oct-a-certain-dark-item-english-sub",
+    "title": "2026 Oct A Certain Dark Item English Sub",
+    "description": "Official anime series from Muse Asia Official.",
+    "genres": [],
+    "playlistId": "PLfpRiJdpycMM",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "145",
+    "id": "2026-oct-magic-repo-man-dumped-by-my-party-i-ll-cash-in-with",
+    "title": "2026 Oct Magic Repo Man: Dumped by My Party. I'll Cash In With a Cute Support Fairy to Become the Strongest! English Sub",
+    "description": "Official anime series from Muse Asia Official.",
+    "genres": [],
+    "playlistId": "PLAzayY4fPdjw",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "146",
+    "id": "mushoku-tensei-jobless-reincarnation-season-3-english-sub",
+    "title": "Mushoku Tensei: Jobless Reincarnation Season 3 English Sub",
+    "description": "Official anime series from Muse Asia Official.",
+    "genres": [],
+    "playlistId": "PLwLSw1_eDZl1LMA6zhohDzfoV-XXFxS9Z",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "147",
+    "id": "en-dub-ver-mobile-suit-gundam-seed",
+    "title": "EN Dub ver Mobile Suit Gundam SEED",
+    "description": "Official anime series from GUNDAM.INFO Official.",
+    "genres": [],
+    "playlistId": "PLGpoKWN7Bq4g",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "148",
+    "id": "gundam-movie-memory",
+    "title": "GUNDAM MOVIE MEMORY",
+    "description": "Official anime movie from GUNDAM.INFO Official.",
+    "genres": [],
+    "playlistId": "PLRd-sQDIfoMs",
+    "trending": 45,
+    "type": "movie"
+  },
+  {
+    "key": "149",
+    "id": "kenichi",
+    "title": "KenIchi",
+    "description": "Official anime series from Anime! on TMS Official.",
+    "genres": [],
+    "playlistId": "PLj2Ugc-vxcWFY6YqMWEUqnwJ8F8Ppp_h-",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "150",
+    "id": "10-fx",
+    "title": "10 FX",
+    "description": "Official anime series from KADOKAWAanime Official.",
+    "genres": [],
+    "playlistId": "PL3ongWuaWwZOuBUyogQWooKIwvKIbg59j",
+    "trending": 45,
+    "type": "series"
+  },
+  {
+    "key": "151",
+    "id": "10-max",
+    "title": "10 MAX",
+    "description": "Official anime series from KADOKAWAanime Official.",
+    "genres": [],
+    "playlistId": "PL3ongWuaWwZPflrfdPKCK5sdjcXyM6eOP",
     "trending": 45,
     "type": "series"
   }
